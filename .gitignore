@@ -1,0 +1,5 @@
+temp_files/
+src/
+out/
+.idea*
+*.pyc
