@@ -3,7 +3,9 @@ import argparse
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt, patches
+from mpl_toolkits.mplot3d import Axes3D
 
+Axes3D
 from Classifiers import LogisticRegressionClassifier
 
 parser = argparse.ArgumentParser()
