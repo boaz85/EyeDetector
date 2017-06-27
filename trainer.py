@@ -1,9 +1,8 @@
 import argparse
 
 import numpy as np
-import matplotlib.pyplot as plt
 
-from Classifiers import LogisticRegressionClassifier
+from Classifiers.LogisticRegression import LogisticRegressionClassifier
 
 parser = argparse.ArgumentParser()
 
@@ -54,6 +53,8 @@ if __name__ == '__main__':
                                               plot_error_rate=args.plot_error_rate, visualize_theta=args.visualize_theta)
 
     classifier.load_train_data(args.train_data, args.cv_size)
-    theta = classifier.train(args.alpha, args.lambdaa, args.iterations)#np.load('optimized_theta.npy')#
-    error_rate = classifier.test(theta)
-    np.save('optimized_theta', theta)
+    #theta = classifier.train(args.alpha, args.lambdaa, args.iterations)#np.load('optimized_theta.npy')#
+    optimal_params = classifier.optimize_parameters()
+    print optimal_params
+    #error_rate = classifier.test(theta)
+    #np.save('optimized_theta', theta)
